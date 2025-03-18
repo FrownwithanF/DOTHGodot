@@ -1,0 +1,22 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1742331410
+icon.svg::CompressedTexture2D/CompressedTexture2D::3826750607881266805::1742134879::1742134884::1::::<><><>0<>0<>ceea9e0a646343cd3a3dcca11468568b<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://Scenes/::1742151427
+::res://Scenes/Room Types/::1742331569
+Generic.tscn::PackedScene::3273258272416139436::1742331569::0::1::::<><><>0<>0<><>::uid://bw61mo60u7egl::::res://Textures/Chandelier.png<>uid://0xmyudf4qq7d::::res://Textures/Tile Sprites/walls.png<>uid://ce08uu6x620ey::::res://Scripts/playermovement.gd<>uid://i20c3qy2hahx::::res://Textures/player.png<>uid://f5tmgi7e7gjk::::res://Scripts/Room Logic/nextroom.gd<>uid://6ruiueg3nsc7::::res://Scripts/Room Logic/doorbehaviour.gd<>uid://bqacgms7t2wq5::::res://Textures/Open.png<>uid://bl8rxyu7np0kf::::res://Textures/Closed.png<>uid://5gsxt18w1svs::::res://Sounds/Open.wav<>uid://15353eb1b04f::::res://Sounds/Close.wav
+::res://Scripts/::1742152078
+globals.gd::GDScript/GDScript::9201624116463222424::1742152078::0::1::::<>Node<><>0<>0<><>::
+playermovement.gd::GDScript/GDScript::5107246661872688492::1742137557::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://Scripts/Room Logic/::1742331450
+doorbehaviour.gd::GDScript/GDScript::2212178257761370900::1742151342::0::1::::<>Node2D<><>0<>0<><>::
+nextroom.gd::GDScript::414050932160456852::1742154344::0::1::::<>Area2D<><>0<>0<><>::
+::res://Sounds/::1742151417
+Close.wav::AudioStreamWAV/AudioStreamWAV::1888596393738514187::1742149820::1742151414::1::::<><><>0<>0<>6efe3281e14417e565241c5cc53a2d37<>res://.godot/imported/Close.wav-3273ffd37fe3f9544e6ac02bafe370a2.sample::
+Open.wav::AudioStreamWAV/AudioStreamWAV::2119186594433318516::1742149816::1742151417::1::::<><><>0<>0<>5d2600c6d33b009a0a1bb661b0f03b0a<>res://.godot/imported/Open.wav-8e432efcc3a65394f4af11db915aaa54.sample::
+::res://Textures/::1742151465
+Chandelier.png::CompressedTexture2D/CompressedTexture2D::3996171809824167175::1742138003::1742151453::1::::<><><>0<>0<>10ac36ab948d5d980c12bbb0c757cfb7<>res://.godot/imported/Chandelier.png-a58842b039034af3598de17ed96bd0d3.ctex::
+Closed.png::CompressedTexture2D/CompressedTexture2D::3227696984660688901::1742149812::1742151455::1::::<><><>0<>0<>1bd938a4997c1d8b761667f3e428549e<>res://.godot/imported/Closed.png-a289d64c4a9d0ce5949b5b9b07ff7af5.ctex::
+Open.png::CompressedTexture2D/CompressedTexture2D::3509574990217673886::1742331643::1742331646::1::::<><><>0<>0<>0a60d33f2e356956446281431d3d556f<>res://.godot/imported/Open.png-9ede28c94b397096f672fef0cf0ddfdb.ctex::
+player.png::CompressedTexture2D/CompressedTexture2D::618771941368325741::1742136465::1742151459::1::::<><><>0<>0<>36afad37acded58e14735c2bcbcea195<>res://.godot/imported/player.png-37d6d449c686f6028362b8d8a235ada7.ctex::
+::res://Textures/Tile Sprites/::1742151465
+walls.png::CompressedTexture2D/CompressedTexture2D::1802974297629094963::1742135258::1742151465::1::::<><><>0<>0<>e1a34cbb0ec391c27d171a9854b82bec<>res://.godot/imported/walls.png-e3a5f209fc91958cdac1c4e7e016368b.ctex::

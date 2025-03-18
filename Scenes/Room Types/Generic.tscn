@@ -1,0 +1,167 @@
+[gd_scene load_steps=20 format=4 uid="uid://bmvuc54gl3i5a"]
+
+[ext_resource type="Texture2D" uid="uid://bw61mo60u7egl" path="res://Textures/Chandelier.png" id="1_t2eul"]
+[ext_resource type="Texture2D" uid="uid://0xmyudf4qq7d" path="res://Textures/Tile Sprites/walls.png" id="2_g0tm5"]
+[ext_resource type="Script" uid="uid://ce08uu6x620ey" path="res://Scripts/playermovement.gd" id="3_k7sgk"]
+[ext_resource type="Texture2D" uid="uid://i20c3qy2hahx" path="res://Textures/player.png" id="4_gfcei"]
+[ext_resource type="Script" uid="uid://f5tmgi7e7gjk" path="res://Scripts/Room Logic/nextroom.gd" id="5_ukuuh"]
+[ext_resource type="Script" uid="uid://6ruiueg3nsc7" path="res://Scripts/Room Logic/doorbehaviour.gd" id="6_yqlnb"]
+[ext_resource type="Texture2D" uid="uid://bqacgms7t2wq5" path="res://Textures/Open.png" id="7_t2bil"]
+[ext_resource type="Texture2D" uid="uid://bl8rxyu7np0kf" path="res://Textures/Closed.png" id="8_gso8i"]
+[ext_resource type="AudioStream" uid="uid://5gsxt18w1svs" path="res://Sounds/Open.wav" id="9_0vhhn"]
+[ext_resource type="AudioStream" uid="uid://15353eb1b04f" path="res://Sounds/Close.wav" id="10_64a15"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_feb5d"]
+size = Vector2(258, 38)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80nbo"]
+texture = ExtResource("2_g0tm5")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_e2o6t"]
+sources/0 = SubResource("TileSetAtlasSource_80nbo")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jktm"]
+size = Vector2(8, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fc0e3"]
+size = Vector2(20, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
+size = Vector2(20, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
+size = Vector2(258, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5wjh"]
+size = Vector2(26, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vef74"]
+size = Vector2(20, 47)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Floor"]
+position = Vector2(13, 35)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Chandelier" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_t2eul")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+position = Vector2(1, 0)
+tile_map_data = PackedByteArray("AAD6//3/AAAAAAAAAAD6//7/AAAAAAAAAAD6////AAAAAAAAAAD6/wAAAAAAAAAAAAD7//3/AAAAAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAD7/wAAAAAAAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD9//3/AAAAAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD+//3/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD///3/AAAAAAAAAAD/////AAAAAAAAAAD//wAAAAAAAAAAAAAAAP3/AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP//AAAAAAAAAAABAP3/AAAAAAAAAAABAP7/AAAAAAAAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAACAP3/AAAAAAAAAAACAP7/AAAAAAAAAAACAP//AAAAAAAAAAACAAAAAAAAAAAAAAADAP3/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAAEAP3/AAAAAAAAAAAEAP7/AAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAFAP3/AAAAAAAAAAAFAP7/AAAAAAAAAAAFAP//AAAAAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///7/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_e2o6t")
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
+z_index = 2
+position = Vector2(-90, 8)
+script = ExtResource("3_k7sgk")
+
+[node name="Appearance" type="Sprite2D" parent="Player"]
+texture = ExtResource("4_gfcei")
+
+[node name="Collision" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="Camera" type="Camera2D" parent="Player"]
+zoom = Vector2(5.98, 5.98)
+
+[node name="Boundaries" type="Node2D" parent="."]
+
+[node name="Boundary" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(-132, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Boundary"]
+position = Vector2(26, 11)
+shape = SubResource("RectangleShape2D_fc0e3")
+
+[node name="Boundary2" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(132, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Boundary2"]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_ryrav")
+
+[node name="CeilingBoundary" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(132, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/CeilingBoundary"]
+position = Vector2(-119, -31.5)
+shape = SubResource("RectangleShape2D_eow3j")
+
+[node name="NextRoom" type="Area2D" parent="."]
+script = ExtResource("5_ukuuh")
+
+[node name="Collision" type="CollisionShape2D" parent="NextRoom"]
+position = Vector2(109, -7.5)
+shape = SubResource("RectangleShape2D_j5wjh")
+
+[node name="Door" type="Node2D" parent="."]
+position = Vector2(96, 0)
+script = ExtResource("6_yqlnb")
+
+[node name="Open" type="Sprite2D" parent="Door"]
+visible = false
+z_index = 1
+position = Vector2(-6.17233, 0)
+texture = ExtResource("7_t2bil")
+
+[node name="Closed" type="Sprite2D" parent="Door"]
+z_index = 1
+position = Vector2(0.230675, 0)
+texture = ExtResource("8_gso8i")
+
+[node name="OpenSFX" type="AudioStreamPlayer2D" parent="Door"]
+stream = ExtResource("9_0vhhn")
+
+[node name="CloseSFX" type="AudioStreamPlayer2D" parent="Door"]
+stream = ExtResource("10_64a15")
+
+[node name="Area2D" type="Area2D" parent="Door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Area2D"]
+position = Vector2(-10, -7.5)
+shape = SubResource("RectangleShape2D_vef74")
+
+[node name="Door2" type="Node2D" parent="."]
+position = Vector2(-96, 0)
+scale = Vector2(-1, 1)
+script = ExtResource("6_yqlnb")
+
+[node name="Open" type="Sprite2D" parent="Door2"]
+visible = false
+z_index = 1
+position = Vector2(-6.17233, 0)
+texture = ExtResource("7_t2bil")
+
+[node name="Closed" type="Sprite2D" parent="Door2"]
+z_index = 1
+position = Vector2(0.230675, 0)
+texture = ExtResource("8_gso8i")
+
+[node name="OpenSFX" type="AudioStreamPlayer2D" parent="Door2"]
+stream = ExtResource("9_0vhhn")
+
+[node name="CloseSFX" type="AudioStreamPlayer2D" parent="Door2"]
+stream = ExtResource("10_64a15")
+
+[node name="Area2D" type="Area2D" parent="Door2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2/Area2D"]
+position = Vector2(-10, -7.5)
+shape = SubResource("RectangleShape2D_vef74")
